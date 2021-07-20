@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+h1{
+  color: #52b788;
+  text-align: center;
+  padding: 55px;
+  margin-bottom: 50px;
+  font-size: 68px;
+  font-weight: 500;
+  font-family: 'Otomanopee One', sans-serif;
+}
+
+h2{
+  color: #022b3a;
+  text-align: center;
+  padding: 15px;
+}
+p {
+  text-align: center;
+  margin-bottom: 0px;
+  justify-content: center;
+}
+img {
+  width: 100%;
+  height: 80%;
+}
+
+.container {
+  display: block;
+}
+
+
+</style>
+
+     <h1>Main Site</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="{% static 'img/annie-spratt-X_NiqkkzVgM-unsplash_copy.jpg' %}">
+    </div>
+    <div class="col">
+      <h2>Accelerate Growth To Improve Life</h2>
+      <p>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Accelerate Growth To Improve Life</h2>
+      <p>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym</p>
+    </div>
+    <div class="col">
+      <img src="{% static 'img/luca-bravo-ny6qxqv_m04-unsplash.jpg' %}">
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>
