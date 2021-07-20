@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    margin-top: 80px;
+    font-size: 32px;
+    font-weight: 600;
+    padding: 5px;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+
+}
+button {
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    font-family: 'Comfortaa', cursive;
+    padding: 12px 28px;
+    float: right;
+}
+a {
+    color: #0b525b;
+    font-weight: bold;
+}
+p {
+    margin: 5px;
+    padding: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+.journal-entry {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    background-color: #f8f9fa;
+    position: relative;
+    display: block;
+}
+.end-button {
+    float: right;
+    padding: 40px;
+}
+</style>
+
+<img src="{% static 'img/details-1-background.jpg' %}" class="img-fluid" alt="...">
+
+<div class="end-button">
+    <button><a href="{% url 'add_entry' %}" class=""> Add new entry</a></button>
+</div>
+<div class="container">
+    <div class="journal-entry">
+
+        {% for entry in entries %}
+
+            <h2>{{ entry.place }}</h2>
+
+            <em>{{ entry.date }}</em>
+
+            <p>Notes: {{ entry.notes }}</p>
+
+        <button><a href="{% url 'view_entry' entry.id %}">Read More</a></button>
+        <button><a href="{% url 'edit_entry' entry.id %}">Edit</a></button>
+
+        {% endfor %}
+     </div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>
