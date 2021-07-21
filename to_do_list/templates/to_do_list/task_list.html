@@ -8,11 +8,12 @@ body {
     background-image: url("{% static 'img/pexels-taryn-elliott-3889991.jpg' %}");
 }
 h1{
-    color: #d8e2dc;
+    font-family: 'Questrial', sans-serif;
+    color: #cbf3f0;
     text-align: center;
     padding: 45px;
     font-size: 68px;
-    font-weight: 500;
+    font-weight: bold;
     text-shadow: 2px 2px #ccd5ae;
 }
 .search-option{
@@ -25,6 +26,9 @@ h1{
     margin: 20px;
     padding:20px;
     border-radius: 3px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
 }
 .btn {
     border-radius: 10px;
@@ -56,19 +60,17 @@ h1{
 </div>
 
 <div class="container">
-    <table class="center-column">
+    <table class="center-column ">
         {% for task in tasks %}
-
-            {% if task.completed == True %}
-                <strike>{{ task.title }}</strike>
-            {% else %}
-                <span>{{ task.title }}</span>
-            {% endif %}
-            <a href="{% url 'task' task.id %}" class="btn btn-primary">View</a>
-            <a href="{% url 'edit' task.id %}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'delete' task.id %}" class="btn btn-primary">Delete</a>
-    </table>
+        <tr>
+            <td>{{ task.title }}</td>
+            <td><a href="{% url 'task' task.id %}" class="btn btn-primary">View</a></td>
+            <td><a href="{% url 'edit' task.id %}" class="btn btn-primary">Edit</a></td>
+            <td><a href="{% url 'delete' task.id %}" class="btn btn-primary">Delete</a></td>
+        </tr>
         {% endfor %}
+    </table>
+
 </div>
 
 {% endblock %}
