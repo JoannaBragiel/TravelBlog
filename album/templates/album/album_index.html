@@ -39,7 +39,7 @@ p {
 
     <h1> Travel Album </h1>
 
-<!--# Kategorie-->
+<!--# Categories-->
 <div class="m-5">
     <div class="container">
         <div class="row">
@@ -66,7 +66,7 @@ p {
                 </div>
             </div>
 
-<!--# Kafelki-->
+<!--# Tiles -->
         <div class="col-md-9">
             <div class="row">
                 {% for image in images %}
@@ -74,7 +74,6 @@ p {
                        <div class="card my-2">
                                <img src="{{ image.image.url }}"
                                alt="Hidden">
-    <!--                            #wrong url, should be image.picture.url, but error persists -->
                               <div class="card-body">
                                   <small>Category: {{ image.category.name }}</small>
                               </div>
